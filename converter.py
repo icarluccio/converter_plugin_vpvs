@@ -167,16 +167,3 @@ else:
     print(json.dumps(data_err))
 
 exit(0)
-'''
-{
-  "ranges": {
-    "vpvs": {
-
-      "axisNames": ["t"], 
-      "shape": [44],
-      "values": [],
-    },
-  },
-},
-
-'''
