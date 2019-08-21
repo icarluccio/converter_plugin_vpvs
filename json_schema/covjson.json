@@ -1,0 +1,286 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://fridge.rm.ingv.it/schemas/covjson.json",
+  "type": "object",
+  "title": "covjson Payload Schema",
+  "required": [
+    "type", "domain", "parameters", "ranges"
+  ],
+  "properties": {
+    "type": {
+      "$id": "#/properties/type",
+      "type": "string",
+      "title": "type Schema",
+      "default": "Coverage",
+      "examples": [
+        "Coverage"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "domain": {
+      "$id": "#/properties/domain",
+      "type": "object",
+      "title": "domain Schema",
+      "required": ["type", "domainType", "axes", "referencing"],
+      "properties": {
+        "type":{
+          "$id": "#/properties/domain/type",
+          "type": "string",
+          "title": "domain_type Schema",
+          "default": "Domain",
+          "examples": ["Domain"],
+          "pattern": "^(.*)$"
+        },
+        "domainType":{
+          "$id": "#/properties/domain/domainType",
+          "type": "string",
+          "title": "domain_domainType Schema",
+          "default": "PointSeries",
+          "examples": ["PointSeries"],
+          "pattern": "^(.*)$"
+        },
+        "axes":{
+          "$id": "#/properties/domain/axes",
+          "type": "object",
+          "title": "domain_axes Schema",
+          "required": ["x", "y", "t"],
+          "properties": {
+            "x": {
+              "$id": "#/properties/domain/axes/x",
+              "type": "object",
+              "title": "domain_axes_x Schema",
+              "required": ["values"],
+              "properties": {
+                "values": {
+                  "$id": "#/properties/domain/axes/x/values",
+                  "type": "array",
+                  "title": "domain_axes_x_value Schema",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "y": {
+              "$id": "#/properties/domain/axes/y",
+              "type": "object",
+              "title": "domain_axes_y Schema",
+              "required": ["values"],
+              "properties": {
+                "values": {
+                  "$id": "#/properties/domain/axes/y/values",
+                  "type": "array",
+                  "title": "domain_axes_y_value Schema",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "t": {
+              "$id": "#/properties/domain/axes/t",
+              "type": "object",
+              "title": "domain_axes_t Schema",
+              "required": ["values"],
+              "properties": {
+                "values": {
+                  "$id": "#/properties/domain/axes/t/values",
+                  "type": "array",
+                  "title": "domain_axes_t_value Schema",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "referencing":{
+          "$id": "#/properties/domain/referencing",
+          "type": "array",
+          "title": "domain_referencing Schema",
+          "items": {
+            "$id": "#/properties/domain/referencing/items",
+            "type": "object",
+            "title": "domain_referencing_Items Schema",
+            "required": ["coordinates", "system"],
+            "properties": {
+              "coordinates": {
+                "$id": "#/properties/domain/referencing/items/coordinates",
+                "type": "array",
+                "title": "domain_referencing_Items_coordinates Schema",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "system": {
+                "$id": "#/properties/domain/referencing/items/system",
+                "type": "object",
+                "title": "domain_referencing_Items_system Schema",
+                "required": ["type"],
+                "properties": {
+                  "type": {
+                    "$id": "#/properties/domain/referencing/items/system/type",
+                    "type": "string",
+                    "title": "domain_referencing_Items_system_type Schema",
+                    "enum": ["GeographicCRS", "TemporalRS"]
+                  },
+                  "id": {
+                    "$id": "#/properties/domain/referencing/items/system/id",
+                    "type": "string",
+                    "title": "domain_referencing_Items_system_id Schema",
+                    "default": "http://www.opengis.net/def/crs/EPSG/9.6.1/4326",
+                    "examples": ["http://www.opengis.net/def/crs/EPSG/9.6.1/4326"]
+                  },
+                  "calendar": {
+                    "$id": "#/properties/domain/referencing/items/system/calendar",
+                    "type": "string",
+                    "title": "domain_referencing_Items_system_calendar Schema",
+                    "default": "Gregorian",
+                    "examples": ["Gregorian"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "$id": "#/properties/parameters",
+      "type": "object",
+      "title": "parameters Schema",
+      "minProperties": 1,
+      "properties": {
+        "param": {
+          "$id": "#/properties/parameters/param",
+          "type": "object",
+          "title": "parameters_param Schema",
+          "required": ["type", "description", "unit", "observedProperty"],
+          "properties": {
+            "type": {
+              "$id": "#/properties/parameters/param/type",
+              "type": "string",
+              "title": "parameters_param_type Schema",
+              "default": "Parameter",
+              "examples": ["Parameter"]
+            },
+            "description": {
+              "$id": "#/properties/parameters/param/description",
+              "type": "object",
+              "title": "parameters_param_description Schema",
+              "required": ["en"],
+              "properties": {
+                "en": {
+                  "$id": "#/properties/parameters/param/description/en",
+                  "type": "string",
+                  "title": "parameters_param_description_en Schema",
+                  "default": "",
+                  "examples": [""]
+                }
+              }
+            },
+            "unit": {
+              "$id": "#/properties/parameters/param/unit",
+              "type": "object",
+              "title": "parameters_param_unit Schema",
+              "required": ["en"],
+              "properties": {
+                "symbol": {
+                  "$id": "#/properties/parameters/param/unit/symbol",
+                  "type": "string",
+                  "title": "parameters_param_unit_symbol Schema",
+                  "default": "",
+                  "examples": [""]
+                }
+              }
+            },
+            "observedProperty": {
+              "$id": "#/properties/parameters/param/observedProperty",
+              "type": "object",
+              "title": "parameters_param_observedProperty Schema",
+              "required": ["id", "label"],
+              "properties": {
+                "id": {
+                  "$id": "#/properties/parameters/param/observedProperty/id",
+                  "type": "string",
+                  "title": "parameters_param_observedProperty_id Schema",
+                  "default": "",
+                  "examples": [""]
+                },
+                "label": {
+                  "$id": "#/properties/parameters/param/observedProperty/label",
+                  "type": "object",
+                  "title": "parameters_param_observedProperty_label Schema",
+                  "required": ["en"],
+                  "properties": {
+                    "en": {
+                      "$id": "#/properties/parameters/param/observedProperty/label/en",
+                      "type": "string",
+                      "title": "parameters_param_observedProperty_label_en Schema"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "ranges": {
+      "$id": "#/properties/ranges",
+      "type": "object",
+      "title": "ranges Schema",
+      "minProperties": 1,
+      "properties": {
+        "param": {
+          "$id": "#/properties/ranges/param",
+          "type": "object",
+          "title": "ranges_param Schema",
+          "required": ["type", "dataType", "axisNames", "shape", "values"],
+          "properties": {
+            "type": {
+              "$id": "#/properties/ranges/param/type",
+              "type": "string",
+              "title": "ranges_param_type Schema",
+              "default": "NdArray",
+              "examples": ["NdArray"]
+            },
+            "dataType": {
+              "$id": "#/properties/ranges/param/dataType",
+              "type": "string",
+              "title": "ranges_param_dataType Schema",
+              "default": "float",
+              "examples": ["float"]
+            },
+            "axisNames": {
+              "$id": "#/properties/ranges/param/axisNames",
+              "type": "array",
+              "title": "ranges_param_axisNames Schema",
+              "items": {
+                "type": "string"
+              }
+            },
+            "shape": {
+              "$id": "#/properties/ranges/param/shape",
+              "type": "array",
+              "title": "ranges_param_shape Schema",
+              "items": {
+                "type": "number"
+              }
+            },
+            "values": {
+              "$id": "#/properties/ranges/param/values",
+              "type": "array",
+              "title": "ranges_param_values Schema",
+              "items": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

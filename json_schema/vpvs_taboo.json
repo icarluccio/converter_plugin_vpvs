@@ -1,0 +1,365 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://fridge.rm.ingv.it/schemas/vpvs/vpvs_taboo.json",
+  "type": "object",
+  "title": "TABOO Vp/Vs Payload Schema",
+  "required": [
+    "results"
+  ],
+  "properties": {
+    "results": {
+      "$id": "#/properties/results",
+      "type": "array",
+      "title": "The Results Schema",
+      "items": {
+        "$id": "#/properties/results/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "event_origin_time",
+          "errh",
+          "station_location",
+          "erry",
+          "vpvs_value",
+          "cs",
+          "event_latitude",
+          "cp",
+          "s_quality",
+          "errv",
+          "event_id",
+          "station_code",
+          "station_longitude",
+          "event_longitude",
+          "method",
+          "mindist",
+          "station_elevation",
+          "eqkid",
+          "station_latitude",
+          "p_arrival_time",
+          "gap",
+          "s_arrival_time",
+          "lcode",
+          "p_quality",
+          "event_loc_id",
+          "vpvs_error",
+          "network_code",
+          "event_elevation",
+          "errx",
+          "model",
+          "cps"
+        ],
+        "properties": {
+          "event_origin_time": {
+            "$id": "#/properties/results/items/properties/event_origin_time",
+            "type": "string",
+            "title": "The Event_origin_time Schema",
+            "default": "",
+            "examples": [
+              "2010-04-01 05:07:57.860"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "errh": {
+            "$id": "#/properties/results/items/properties/errh",
+            "type": "string",
+            "title": "The Errh Schema",
+            "default": "",
+            "examples": [
+              "0.2000"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "station_location": {
+            "$id": "#/properties/results/items/properties/station_location",
+            "type": "string",
+            "title": "The Station_location Schema",
+            "default": "",
+            "examples": [
+              "0"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "erry": {
+            "$id": "#/properties/results/items/properties/erry",
+            "type": "null",
+            "title": "The Erry Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "vpvs_value": {
+            "$id": "#/properties/results/items/properties/vpvs_value",
+            "type": "string",
+            "title": "The Vpvs_value Schema",
+            "default": "",
+            "examples": [
+              "1.63546798"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "cs": {
+            "$id": "#/properties/results/items/properties/cs",
+            "type": "string",
+            "title": "The Cs Schema",
+            "default": "",
+            "examples": [
+              "10"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "event_latitude": {
+            "$id": "#/properties/results/items/properties/event_latitude",
+            "type": "string",
+            "title": "The Event_latitude Schema",
+            "default": "",
+            "examples": [
+              "43.44067"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "cp": {
+            "$id": "#/properties/results/items/properties/cp",
+            "type": "string",
+            "title": "The Cp Schema",
+            "default": "",
+            "examples": [
+              "10"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "s_quality": {
+            "$id": "#/properties/results/items/properties/s_quality",
+            "type": "string",
+            "title": "The S_quality Schema",
+            "default": "",
+            "examples": [
+              "2"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "errv": {
+            "$id": "#/properties/results/items/properties/errv",
+            "type": "string",
+            "title": "The Errv Schema",
+            "default": "",
+            "examples": [
+              "0.20"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "event_id": {
+            "$id": "#/properties/results/items/properties/event_id",
+            "type": "string",
+            "title": "The Event_id Schema",
+            "default": "",
+            "examples": [
+              "100401050551"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "station_code": {
+            "$id": "#/properties/results/items/properties/station_code",
+            "type": "string",
+            "title": "The Station_code Schema",
+            "default": "",
+            "examples": [
+              "ATMC"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "station_longitude": {
+            "$id": "#/properties/results/items/properties/station_longitude",
+            "type": "string",
+            "title": "The Station_longitude Schema",
+            "default": "",
+            "examples": [
+              "12.19285"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "event_longitude": {
+            "$id": "#/properties/results/items/properties/event_longitude",
+            "type": "string",
+            "title": "The Event_longitude Schema",
+            "default": "",
+            "examples": [
+              "12.41217"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "method": {
+            "$id": "#/properties/results/items/properties/method",
+            "type": "string",
+            "title": "The Method Schema",
+            "default": "",
+            "examples": [
+              "3"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "mindist": {
+            "$id": "#/properties/results/items/properties/mindist",
+            "type": "string",
+            "title": "The Mindist Schema",
+            "default": "",
+            "examples": [
+              "6.50"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "station_elevation": {
+            "$id": "#/properties/results/items/properties/station_elevation",
+            "type": "string",
+            "title": "The Station_elevation Schema",
+            "default": "",
+            "examples": [
+              "752.000"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "eqkid": {
+            "$id": "#/properties/results/items/properties/eqkid",
+            "type": "string",
+            "title": "The Eqkid Schema",
+            "default": "",
+            "examples": [
+              "100401050551"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "station_latitude": {
+            "$id": "#/properties/results/items/properties/station_latitude",
+            "type": "string",
+            "title": "The Station_latitude Schema",
+            "default": "",
+            "examples": [
+              "43.44696"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "p_arrival_time": {
+            "$id": "#/properties/results/items/properties/p_arrival_time",
+            "type": "string",
+            "title": "The P_arrival_time Schema",
+            "default": "",
+            "examples": [
+              "2010-04-01 05:08:01.920"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "gap": {
+            "$id": "#/properties/results/items/properties/gap",
+            "type": "string",
+            "title": "The Gap Schema",
+            "default": "",
+            "examples": [
+              "115"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "s_arrival_time": {
+            "$id": "#/properties/results/items/properties/s_arrival_time",
+            "type": "string",
+            "title": "The S_arrival_time Schema",
+            "default": "",
+            "examples": [
+              "2010-04-01 05:08:04.500"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "lcode": {
+            "$id": "#/properties/results/items/properties/lcode",
+            "type": "string",
+            "title": "The Lcode Schema",
+            "default": "",
+            "examples": [
+              "1"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "p_quality": {
+            "$id": "#/properties/results/items/properties/p_quality",
+            "type": "string",
+            "title": "The P_quality Schema",
+            "default": "",
+            "examples": [
+              "3"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "event_loc_id": {
+            "$id": "#/properties/results/items/properties/event_loc_id",
+            "type": "string",
+            "title": "The Event_loc_id Schema",
+            "default": "",
+            "examples": [
+              "37683"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "vpvs_error": {
+            "$id": "#/properties/results/items/properties/vpvs_error",
+            "type": "string",
+            "title": "The Vpvs_error Schema",
+            "default": "",
+            "examples": [
+              "0.14511016916790775"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "network_code": {
+            "$id": "#/properties/results/items/properties/network_code",
+            "type": "string",
+            "title": "The Network_code Schema",
+            "default": "",
+            "examples": [
+              "IV"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "event_elevation": {
+            "$id": "#/properties/results/items/properties/event_elevation",
+            "type": "string",
+            "title": "The Event_elevation Schema",
+            "default": "",
+            "examples": [
+              "2.600"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "errx": {
+            "$id": "#/properties/results/items/properties/errx",
+            "type": "null",
+            "title": "The Errx Schema",
+            "default": null,
+            "examples": [
+              null
+            ]
+          },
+          "model": {
+            "$id": "#/properties/results/items/properties/model",
+            "type": "string",
+            "title": "The Model Schema",
+            "default": "",
+            "examples": [
+              "2"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "cps": {
+            "$id": "#/properties/results/items/properties/cps",
+            "type": "string",
+            "title": "The Cps Schema",
+            "default": "",
+            "examples": [
+              "10"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}
